@@ -1,0 +1,26 @@
+---
+layout: home
+categories: publications
+---
+{% assign category = page.categories | join: ' ' | split: ' ' | last %}
+{% assign index = 0 %}
+{% for post in site.categories[category] %}
+	<section id = "{{index}}">
+
+	{% capture index %}{{ index | plus: '1' }}{% endcapture %}
+		<a href="{{ post.url | prepend: site.baseurl }}" class="image"><img src="images/{{ post.image }}" alt="" /></a>
+		<div class="content">
+			<div class="inner">
+				<h2>{{ post.title }}</h2>
+				<h4>{{ post.authors }}</h4>
+				<a href = "/downloads/{{post.PDF}}" class = "pdf">PDF</a>
+
+				<a href = "/downloads/{{post.CODE}}" class = "code">CODE</a>
+				<p>{{ post.abstract }}</p>
+				<ul class="actions">
+					<li><a href="{{ post.url | prepend: site.baseurl }}" class="button">Project Page</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	{% endfor %}

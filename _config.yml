@@ -1,0 +1,30 @@
+name: Xiao Ma
+description: Personal Blog
+url: http://turingki.com
+hightlighter: pygments
+permalink: /:title/
+relative_permalinks: false
+markdown: kramdown
+#markdown: rdiscount
+#markdown: redcarpet
+baseurl: 
+
+scholar:
+  style: ieee 
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  source: ./_bibliography
+  bibliography: references.bib
+  bibliography_template: "{{reference}}"
+
+  replace_strings: true
+  join_strings:    true
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"
